@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Home
+{% endblock %}
+{% block javascripts %}
+	{{ encore_entry_script_tags('app') }}
+	<script src="/js/main.js" defer></script>
+{% endblock %}
+
+{% block body %}
+	<section class={{"wrapper"}}>
+		<h1 class={{"title"}}>{{title}}</h1>
+		<div id={{"root"}}></div>
+		{# <section id={{"comments-section"}} class={{"comments-box"}}>
+					{% if comments %}
+						{% for comment in comments %}
+							<div class={{"comment-box"}}>
+								<img class={{"user-img"}} src={{"pics/anonymous.jpg"}}>
+								<div class={{"comment-content"}}>
+		
+									<div class={{"name-index-box"}}>
+										<p class={{"comment-name"}}>{{comment.name}}</p>
+										<p class={{"comment-index-id"}}>Comment #{{loop.index}}</p>
+									</div>
+		
+									<p class={{"comment-text"}}>{{comment.comment}}</p>
+									<div class={{"time-edit-delete-box"}}>
+										<p class={{"comment-timestamp"}}>{{comment.timestamp|date("Y-m-d, H:i:s")}}</p>
+										<div class={{"edit-delete-box"}}>
+											<a href="#" class={{"delete-comment-button"}} data-id={{comment.id}}>Delete</a>
+											<a href="/comments/edit/{{comment.id}}" class={{"edit-comment-button"}}>Edit</a>
+										</div>
+									</div>
+								</div>
+							</div>
+		
+						{% endfor %}
+					{% else %}
+						<p class={{"no-comments-text"}}>No comments to show.</p>
+					{% endif %}
+				</section> #}
+	</section>
+{% endblock %}
